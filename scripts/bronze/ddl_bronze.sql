@@ -44,7 +44,7 @@ drop table if exists bronze.erp_cust_az12;
 create table bronze.erp_cust_az12
 (
     cid nvarchar(50),
-    bdate date,
+    bdate nvarchar(20),
     gen nvarchar(20)
 );
 
