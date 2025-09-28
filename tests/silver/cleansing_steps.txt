@@ -1,0 +1,19 @@
+silver.crm_cust_info:
+- Remove duplicates (cst_id);
+- Trim
+- Standardize gender ('n/a', 'Male', 'Female') 
+and marital_status ('n/a', 'Maried', 'Single')
+
+silver.crm_prd_info:
+- Create cat_id from prd_key
+- Transform prd_key to match crm_sales_details
+- Replace null value by 0 for prd_cost
+- Standardize prd_line
+- Change prd_end_dt to match the prd_start_dt of next line regarding the same product
+
+silver.crm_sales_details:
+- Conversion des chaines valides en date
+- Mise à NULL des dates invalides
+
+silver.erp_cust_az12
+- Standardize gen
