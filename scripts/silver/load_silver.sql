@@ -141,7 +141,10 @@ INSERT INTO silver.erp_cust_az12
 )
 select 
 trim(REPLACE(cid, 'NAS', '')),
-CAST(bdate AS DATE),
+CASE 
+    WHEN bdate > GETDATE() THEN NULL
+    ELSE CAST(bdate AS DATE)
+END bdate,
 CASE  
     WHEN  TRIM(UPPER(gen)) in ('F', 'FEMALE') THEN 'Female'
     WHEN  TRIM(UPPER(gen)) in ('M', 'MALE') THEN 'Male'
